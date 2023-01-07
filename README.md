@@ -1,4 +1,8 @@
+<div align="center">
+
 # PyTorch: Back to Basic
+
+</div>
 
 ## Introduction
 Welcome to my PyTorch learning repository! Actually, i already use PyTorch for 1 year in my some project. But sometimes, i feel like forget about how it's work. So now, i decided to review again and try to learn back to basic for strong foundational. I am using the book "Deep Learning with PyTorch" by Eli Stevens and Luca Antiga as my primary resource to guide my learning journey with this powerful deep learning framework. My goal is to gain a strong foundation in PyTorch and be able to use it to develop and train neural networks for a variety of tasks.
