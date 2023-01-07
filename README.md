@@ -2,6 +2,12 @@
 
 # PyTorch: Back to Basic
 
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white)](https://www.pytorch.org/)
+[![Numpy](https://img.shields.io/badge/Numpy-013243?logo=numpy&logoColor=white)](https://www.numpy.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter%20Notebook-F37626?logo=jupyter&logoColor=white)](https://www.jupyter.org/)
+
+
 </div>
 
 ## Introduction
