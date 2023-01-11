@@ -20,7 +20,7 @@ To guide my learning, I am using the following resources:
 * The official PyTorch tutorial: https://pytorch.org/tutorials/
 
 ## Progress
-* Read chapters 1-3 of the book
+* Read chapters 1-4 of the book
 * Completed exercises on introduction, pretrained networks, tensors, and tensor representation for real world data
 
 ## Future goals
