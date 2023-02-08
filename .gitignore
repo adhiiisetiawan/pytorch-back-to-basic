@@ -14,6 +14,7 @@ ipython_config.py
 vision/
 dataset/
 data-unversioned/
+.env-dl/
 # Remove previous ipynb_checkpoints
 #   git rm -r .ipynb_checkpoints/
 
