@@ -1,3 +1,4 @@
+import copy
 import csv
 import functools
 import glob
@@ -98,8 +99,25 @@ class Ct:
         return ct_chunk, center_irc
 
 class LunaDataset(Dataset):
-    def __init__(self):
-        super().__init__()
+    def __init__(self,
+            val_stride=0,
+            isValSet_bool=None,
+            series_uid=None
+        ):
+        self.candidateInfo_list = copy.copy(getCandidateInfoList())
+
+        if series_uid:
+            self.candidateInfo_list = [
+                x for x in self.candidateInfo_list if x.series_uid == series_uid
+            ]
+
+        if isValSet_bool:
+            assert val_stride > 0, val_stride
+            self.candidateInfo_list = self.candidateInfo_list[::val_stride]
+            assert self.candidateInfo_list
+        elif val_stride > 0:
+            del self.candidateInfo_list[::val_stride]
+            assert self.candidateInfo_list
 
     def __len__(self):
         return len(self.candidateInfo_list)
