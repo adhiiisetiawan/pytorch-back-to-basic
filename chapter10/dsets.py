@@ -5,6 +5,7 @@ import os
 
 import numpy as np
 import SimpleITK as sitk
+import torch
 
 from collections import namedtuple
 from torch.utils.data import Dataset
@@ -112,6 +113,10 @@ class LunaDataset(Dataset):
             candidateInfo_tup.center_xyz,
             width_irc
         )
+
+        candidate_t = torch.from_numpy(candidate_a)
+        candidate_t = candidate_t.to(torch.float32)
+        candidate_t = candidate_t.unsqueeze(0)
 
         return (
             candidate_t, 1((CO10 - 1))
