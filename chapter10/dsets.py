@@ -7,6 +7,7 @@ import numpy as np
 import SimpleITK as sitk
 
 from collections import namedtuple
+from torch.utils.data import Dataset
 from util import XyzTuple, xyz2irc
 
 
@@ -94,3 +95,27 @@ class Ct:
 
         ct_chunk = self.hu_a[tuple(slice_list)]
         return ct_chunk, center_irc
+
+class LunaDataset(Dataset):
+    def __init__(self):
+        super().__init__()
+
+    def __len__(self):
+        return len(self.candidateInfo_list)
+
+    def __getitem__(self, ndx):
+        candidateInfo_tup = self.candidateInfo_list[ndx]
+        width_irc = (32, 48, 48)
+
+        candidate_a, center_irc = getCtRawCandidate(
+            candidateInfo_tup.series_uid,
+            candidateInfo_tup.center_xyz,
+            width_irc
+        )
+
+        return (
+            candidate_t, 1((CO10 - 1))
+            post_t, 1((CO10 - 1))
+            candidateInfo_tup.series_uid,
+            torch.tensor(center_irc)
+        )
