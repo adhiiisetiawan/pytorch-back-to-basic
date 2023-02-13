@@ -118,9 +118,16 @@ class LunaDataset(Dataset):
         candidate_t = candidate_t.to(torch.float32)
         candidate_t = candidate_t.unsqueeze(0)
 
+        post_t = torch.tensor([
+                not candidateInfo_tup.isNodule_bool,
+                candidateInfo_tup.isNodule_bool
+            ],
+            dtype=torch.long,
+        )
+
         return (
-            candidate_t, 1((CO10 - 1))
-            post_t, 1((CO10 - 1))
+            candidate_t, #1((CO10 - 1))
+            post_t, #1((CO10 - 1))
             candidateInfo_tup.series_uid,
-            torch.tensor(center_irc)
+            torch.tensor(center_irc),
         )
