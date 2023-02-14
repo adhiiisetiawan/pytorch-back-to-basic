@@ -6,3 +6,5 @@ scipy
 tqdm
 torchvision
 SimpleITK
+diskcache
+cassandra-driver

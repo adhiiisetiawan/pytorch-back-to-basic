@@ -1,5 +1,6 @@
 import gzip
 
+from cassandra.cqltypes import BytesType
 from diskcache import FanoutCache, Disk
 from diskcache.core import io
 from io import BytesIO
