@@ -14,7 +14,7 @@ from util import XyzTuple, xyz2irc
 from disk import getCache
 
 
-raw_cache = getCache('chapter10_raw')
+raw_cache = getCache('subset0')
 
 CandidateInfoTuple = namedtuple(
     'CandidateInfoTuple',
@@ -52,7 +52,7 @@ def getCandidateInfoList(requireOnDisk_bool=True):
             for annotation_tup in diameter_dict.get(series_uid, []):
                 annotationCenter_xyz, annotationDiameter_mm = annotation_tup
                 for i in range(3):
-                    delta_mm = abs(candidateCenter_xyz[i] - annotationDiameter_mm[i])
+                    delta_mm = abs(candidateCenter_xyz[i] - annotationCenter_xyz[i])
                     if delta_mm > annotationDiameter_mm / 4:
                         break
                     else:
@@ -66,8 +66,8 @@ def getCandidateInfoList(requireOnDisk_bool=True):
                     candidateCenter_xyz
                 ))
 
-            candidateInfo_list.sort(reverse=True)
-            return candidateInfo_list
+    candidateInfo_list.sort(reverse=True)
+    return candidateInfo_list
 
 
 class Ct:

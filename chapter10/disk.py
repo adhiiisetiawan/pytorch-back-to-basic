@@ -46,7 +46,7 @@ class GzipDisk(Disk):
 
 def getCache(scope_str):
     return FanoutCache (
-        'dataset/cache/' + scope_str,
+        '../dataset/cache/' + scope_str,
         disk=GzipDisk,
         shards=64,
         timeout=1,
