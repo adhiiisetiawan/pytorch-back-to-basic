@@ -11,7 +11,10 @@ import torch
 from collections import namedtuple
 from torch.utils.data import Dataset
 from util import XyzTuple, xyz2irc
+from disk import getCache
 
+
+raw_cache = getCache('chapter10_raw')
 
 CandidateInfoTuple = namedtuple(
     'CandidateInfoTuple',
